@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="static\css\styles.css">
+    <script src="{{ url_for('static', filename='js/api.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <div class="header-box">
+        <div class="header">
+            <div class="header-top">
+                <h1>To do list</h1>
+            </div>
+            <div class="search-box">
+                <img class="search-icon" src="{{ url_for('static', filename='images/OIP.webp') }}" alt="search">
+                <input type="text" id="search-input" placeholder="Search tasks...">
+            </div>
+        </div>
+    </div>
+
+    <div class="task-list">
+        <div class="today-line">
+            <h2>Today</h2>
+            <button class="delete-all" id="delete-all-btn">
+                Delete all
+                <img class="delete-icon" src="{{ url_for('static', filename='images/OIP3.webp') }}" alt="delete icon">
+            </button>
+        </div>
+
+        <!-- Add New Task Input & Button Form -->
+        <div class="add-task-container">
+            <input type="text" id="new-task-input" class="new-task-input" placeholder="Add a new task...">
+            <button id="add-task-btn" class="add-task-btn">Add Task</button>
+        </div>
+
+        <div class="tasks" id="tasks-container">
+            <!-- Dynamic task items render here -->
+        </div>
+
+        <div>
+            <button class="add-new-task-button" id="refresh-btn">Refresh</button>
+        </div>
+    </div>
+</body>
+</html>
